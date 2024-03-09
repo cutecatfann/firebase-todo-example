@@ -1,0 +1,225 @@
+/* CSS STYLES, DO NOT EDIT THESE STYLES */
+
+/* VARIABLES */
+:root {
+  --primary-color: rgb(116, 116, 238);
+  --primary-color-light: rgb(116, 116, 238, 0.6);
+  --secondary-color: rgb(183, 183, 183);
+  --secondary-color-light: rgb(183, 183, 183, 0.6);
+  --info-color: rgb(91, 192, 220);
+  --info-color-light: rgb(91, 192, 220, 0.6);
+  --success-color: rgb(27, 176, 41);
+  --success-color-light: rgb(27, 176, 41, 0.6);
+  --warning-color: rgb(227, 176, 72);
+  --warning-color-light: rgb(227, 176, 72, 0.6);
+  --danger-color: rgb(213, 41, 41);
+  --danger-color-light: rgb(213, 41, 41, 0.6);
+}
+
+
+html, body, #root {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 1.1em;
+  overscroll-behavior-x: none; /* stops chrome swipe to go back behavior */
+  font-family: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html {
+  height: -webkit-fill-available;
+  overflow: hidden; /* stops chrome rubber-band */
+}
+
+body {
+  height: 100%; /* stops chrome rubber-band */
+  overflow: auto; /* stops chrome rubber-band */
+  min-height: 100vh;
+  position: fixed; /* mobile viewport bug fix */
+  min-height: -webkit-fill-available; /* mobile viewport bug fix */
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* TODOS */
+.todos {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  margin: 1em;
+  width: 30em;
+  height: calc(100vh - 5em);
+  border-radius: 1em;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.todos h1 {
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
+.todos form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+}
+.todos form input {
+  flex: 1;
+  font-size: 1em;
+}
+.todos form button {
+  font-size: 1em;
+  background-color: var(--primary-color);
+  color: white;
+}
+.todos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+.todos li {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* TODO */
+.todo {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5em;
+  width: 100%;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+.todo .todo__items {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5em;
+  width: 100%;
+  overflow: hidden;
+}
+.todo .todo__items input[type='checkbox'] {
+  transform: scale(1.5);
+}
+.todo .todo__items input[type='text'] {
+  width: 100%;
+  font-size: 1em;
+  padding: 0em .5em;
+}
+.todo .todo__items__title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.todo .todo__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.15em;
+}
+.todo .todo__buttons button {
+  font-size: .75em;
+}
+
+/* INPUTS */
+input[type='text'] {
+  border: none;
+  outline: none;
+  padding: 0.5em;
+  border-radius: .25em;
+  border: 1px solid #eee;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+input[type='text']:focus {
+  border: 1px solid #aaa;
+}
+input[type='text']::placeholder {
+  color: #aaa;
+}
+
+/* BUTTONS */
+button {
+  outline: none;
+  padding: 0.5em;
+  border-radius: .25em;
+  border: 2px solid white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+button:hover {
+  border: 2px solid var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-primary:disabled {
+  background-color: var(--primary-color-light);
+}
+.btn-primary:disabled:hover {
+  border: 2px solid white;
+}
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.btn-secondary:disabled {
+  background-color: var(--secondary-color-light);
+}
+.btn-secondary:disabled:hover {
+  border: 2px solid white;
+}
+.btn-info {
+  background-color: var(--info-color);
+  color: white;
+}
+.btn-info:disabled {
+  background-color: var(--info-color-light);
+}
+.btn-info:disabled:hover {
+  border: 2px solid white;
+}
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+.btn-success:disabled {
+  background-color: var(--success-color-light);
+}
+.btn-success:disabled:hover {
+  border: 2px solid white;
+}
+.btn-warning {
+  background-color: var(--warning-color);
+  color: white;
+}
+.btn-warning:disabled {
+  background-color: var(--warning-color-light);
+}
+.btn-warning:disabled:hover {
+  border: 2px solid white;
+}
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+.btn-danger:disabled {
+  background-color: var(--danger-color-light);
+  cursor: inherit;
+}
+.btn-danger:disabled:hover {
+  border: 2px solid white;
+}

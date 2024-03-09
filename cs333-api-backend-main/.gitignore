@@ -1,0 +1,32 @@
+# dependencies
+node_modules
+
+# config for local api url
+src/config/config.json
+
+# misc
+dump/
+.DS_Store
+.idea
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+dist
+dump/
+.DS_Store
+.env
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
