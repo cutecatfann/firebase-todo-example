@@ -5,6 +5,13 @@ import mongoose from 'mongoose'
 import { corsOptions } from './config/corsOptions.js'
 import routes from './routes/routes.js'
 
+import admin from 'firebase-admin' 
+const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccountKey.json', 'utf8')) // REPLACE WITH YOUR JSON FILE NAME
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+})
+
 // Constants
 const PORT = process.env.PORT || 3000
 const ENV = process.env.NODE_ENV || 'production'

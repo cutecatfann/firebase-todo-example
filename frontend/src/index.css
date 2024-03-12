@@ -223,3 +223,27 @@ button:hover {
 .btn-danger:disabled:hover {
   border: 2px solid white;
 }
+
+/* Google Login Button */
+.google-login-btn {
+  display: flex;
+  justify-content: center; /* align text to the center */
+  align-items: center;
+  width: fit-content; 
+  background-color: #4285F4;
+  color: white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border: none;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.google-login-btn:hover {
+  background-color: #2B7DE9;
+}
+
+.google-login-btn img {
+  width: 20px;
+  height: 20px;
+}

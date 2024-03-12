@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { getAuth, getIdToken } from 'firebase/auth';
 
 import { Todo } from '../Todo/Todo'
 import { CreateTodo } from './CreateTodo'
@@ -16,7 +17,13 @@ const Todos = () => {
    */
   const fetchData = useCallback(async () => {
     try {
-      const response = await fetch('http://localhost:3000')
+      const auth = getAuth();
+      const token = await getIdToken(auth.currentUser, true);
+      const response = await fetch('http://localhost:3000', {
+        headers: {
+          'Authorization': token,
+        },
+      })
       const jsonResponse = await response.json()
       setTodoIds(jsonResponse)
     } catch (error) {
@@ -31,9 +38,14 @@ const Todos = () => {
    */
   const handleCreate = useCallback(async (newTodo) => {
     try {
+      const auth = getAuth();
+      const token = await getIdToken(auth.currentUser, true);
       await fetch("http://localhost:3000", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          'Authorization': token,
+        },
         body: JSON.stringify(newTodo),
       });
     } catch (error) {
